@@ -14,6 +14,8 @@ environment {
                 sh 'mvn clean deploy'
             }
         }
+    
+    
     stage('SonarQube analysis') {
     environment{
       scannerHome = tool 'dpp-sonar-scanner'
@@ -23,6 +25,6 @@ environment {
       sh "${scannerHome}/bin/sonar-scanner"
     }
     }
- }
+  }
 }
 }
